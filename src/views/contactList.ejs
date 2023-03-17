@@ -1,0 +1,37 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+    <div class="contact-list section-100 bg-white page-content" id="contact-list">
+        <%- include('includes/msg') %>
+        <div class="container">  
+            <h2 class="toUpper">Your contact list: </h2>
+            <%if(contacts.length > 0){ %>
+                <div class="table-responsive">
+                    <table class="contact-table">
+                        <tbody>
+                            <% contacts.forEach(contact => { %>
+                                <tr>
+                                    <td><%= contact.name %></td>
+                                    <td><%= contact.surname %></td>
+                                    <td><%= contact.email %></td>
+                                    <td><%= contact.cellphone %></td>
+                                    <td><%= contact.homephone %></td>
+                                    <td>
+                                        <a href="/contact/editId/<%= contact._id %>" class="text-regular">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="/contact/delete/<%= contact._id %>" class="text-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } else { %>
+                <p>You don't have any contacts yet.</p>
+            <% } %>
+            
+            <a href="/contact/form" class="add-contact">Add</a>
+            
+        </div>
+    </div>
+<%- include('includes/footer') %>

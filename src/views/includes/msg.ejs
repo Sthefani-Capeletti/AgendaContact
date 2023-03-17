@@ -1,0 +1,19 @@
+<% if(errors.length > 0) { %>
+    <div class="msg-box msg-box-error">
+        <% errors.forEach(error => { %>
+            <p class="msg-box-text">
+                <%= error %>
+            </p>
+        <% })%>
+    </div>
+<% } %>
+
+<% if(success.length > 0) { %>
+    <div class="msg-box msg-box-success">
+        <% success.forEach( ok => { %>
+            <p class="msg-box-text">
+                <%= ok %>
+            </p>
+        <% })%>
+    </div>
+<% } %>

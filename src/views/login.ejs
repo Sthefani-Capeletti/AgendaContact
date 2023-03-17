@@ -1,0 +1,33 @@
+<%- include('includes/head') %>
+
+<%- include('includes/nav') %>
+
+<div class="forms section-100 bg-white">
+    <%- include('includes/msg') %>
+    <div class="forms-flex container">
+       <div class="form-register">
+            <strong>Register</strong>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, tempora!</p>
+            <form action="/login/register" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="user" id="user" placeholder="User..." class="valida">
+                <input type="email" name="email" id="email" placeholder="E-mail..." class="valida">
+                <input type="password" name="pass" id="pass" placeholder="Password..." class="valida">
+                <input type="submit" value="Register">
+            </form>
+       </div>
+       <div class="form-login">
+            <strong>Login</strong>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, sunt!</p>
+            <form action="/login/login" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="user" id="user" placeholder="User..." class="valida">
+                <input type="password" name="pass" id="pass" placeholder="Password..." class="valida">
+                <input type="submit" value="Login">
+            </form>
+       </div>
+    </div>
+</div>
+
+
+<%- include('includes/footer') %>

@@ -1,0 +1,36 @@
+<nav>
+    <div class="nav-container">
+        <a href="" class="nav-brand">
+            <i class="fa-solid fa-people-group"></i>
+        </a>
+        <ul class="nav-content">
+            <li class="nav-item nav-item-brand">
+                <a href="###" class="nav-link nav-link-brand">Brand</a>
+                <hr class="nav-separator">
+            </li>
+            <li class="nav-item">
+                <a area-current="page" href="/" class="nav-link">Home</a>
+            </li>
+            <% if(user){ %>
+                <li class="nav-item">
+                    <a href="/contact/index" class="nav-link">Contact List</a>
+                </li>
+                <li class="nav-item">
+                    <hr class="nav-separator">
+                    <a href="/login/logout" class="nav-link">Logout</a>
+                </li>
+            <% } 
+            else{
+            %>
+                <li class="nav-item">
+                        <hr class="nav-separator">
+                        <a href="/login/index" class="nav-link">Login</a>
+                </li>
+            <% } %>
+        </ul>
+        <div class="menu-btn">
+            <div class="btn-burger"></div>
+        </div>
+    </div>
+</nav>
+<div class="nav-space"></div>

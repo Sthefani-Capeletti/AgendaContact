@@ -1,0 +1,27 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+    <%- include('includes/msg') %>
+    <div class="contact-form section-100 bg-black page-content">
+        <div class="contact-form-card container">
+            <h2 class="toUpper">New Contact</h2>
+        <%if(contact._id){ %>
+            <form action="/contact/edit/<%= contact._id %>" method="post" class="formRegister">
+        <% } else { %> 
+            <form action="/contact/register" method="post" class="formRegister">
+        <% }%>
+                <input type="hidden" name="userid" id="userid" value="<%= user._id %>">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="input-group">
+                    <input type="text" name="name" id="name" value="<%= contact.name %>" placeholder="Name..." class="valida">
+                    <input type="text" name="surname" id="surname" value="<%= contact.surname %>" placeholder="Surname..." class="valida">
+                </div>
+                <input type="email" name="email" id="email" value="<%= contact.email %>" placeholder="E-mail..." class="valida">
+                <div class="input-group">
+                    <input type="tel" name="cellphone" id="cellphone" value="<%= contact.cellphone %>" placeholder="Cellphone..." class="valida">
+                    <input type="tel" name="homephone" id="homephone" value="<%= contact.homephone %>" placeholder="Homephone..." class="valida">
+                </div>
+                <input type="submit" value="+ Add">
+            </form>
+        </div>
+    </div>
+<%- include('includes/footer') %>
